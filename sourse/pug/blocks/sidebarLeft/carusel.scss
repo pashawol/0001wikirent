@@ -1,0 +1,124 @@
+// start .sidebarLeft
+.carusel {
+	overflow: inherit;
+	margin-bottom: 15px;
+	width: 100%;
+	// height: rem(130);
+	flex-shrink: 0;
+
+	&__slide {
+		width: rem(100);
+		margin-right: 15px;
+
+	}
+
+	&__img-wrap {
+		@include block(100, 130);
+		border-radius: $border-radius;
+		border: 1px solid $primary;
+		overflow: hidden;
+	}
+
+	@include media-breakpoint-up(xl) {}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+
+	@include media-breakpoint-up(sm) {}
+
+	@include media-breakpoint-up(xs) {}
+
+	//
+	@include media-breakpoint-between(md, xl) {}
+
+
+	//
+	@include media-breakpoint-only(xs) {}
+
+	@include media-breakpoint-only(sm) {}
+
+	@include media-breakpoint-only(md) {}
+
+	@include media-breakpoint-only(lg) {}
+
+	@include media-breakpoint-only(xl) {}
+
+	//
+	@include media-breakpoint-down(xl) {}
+
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}
+
+.border-dotted {
+	border: 1px dashed $body-color;
+}
+
+.dropzone {
+	border-radius: $border-radius;
+	border: 1px dashed $primary;
+	background-color: $light;
+	text-align: center;
+	min-height: rem(70);
+	padding: rem(10);
+	padding-top: rem(20);
+	position: relative;
+	// display: flex;
+	// justify-content: center;
+	// flex-direction: column;
+
+	.dz-button {
+		// display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 40;
+	}
+
+	.text-primary {
+		cursor: pointer;
+	}
+
+	.dz-message {
+		margin-top: 1rem;
+		margin-bottom: 0;
+	}
+
+	&__prev-wrap {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		max-width: rem(210);
+		font-size: rem(14);
+	}
+
+	&.dz-started &__prev-wrap {
+		// opacity: 0;
+		display: none;
+	}
+
+	.dz-preview {
+		// position: relative;
+		// display: inline-block;
+		// vertical-align: top;
+		margin: 6px;
+		min-height: 80px;
+	}
+
+	.dz-preview .dz-image {
+		border-radius: 10px;
+		overflow: hidden;
+		width: 80px;
+		height: 80px;
+	}
+}

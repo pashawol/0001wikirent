@@ -1,0 +1,11 @@
+mixin footer()
+	+b.FOOTER.footer.block-with-lazy
+		.container-fluid
+			.row
+				+e.col.col-auto
+					+e.link(href="#")
+						img(src="img/svg/geolocation.svg", alt="")
+				+e.col.col © Bethoven.Digital 2020
+				+e.col.col-auto
+					+e.link(href="#")
+						+icon('share')

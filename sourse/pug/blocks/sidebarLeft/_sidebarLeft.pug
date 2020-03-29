@@ -1,0 +1,158 @@
+mixin sidebarLeft()
+	// start sidebarLeft
+	+b.sidebarLeft--main.section.container-fluid#sidebarLeft&attributes(attributes)
+		
+		+b.panel-block--lg
+			img(src="img/@2x/img.jpg", alt="")
+			block
+
+	// end sidebarLeft
+
+mixin sidebarBody()
+	// start sidebarLeft
+	+b.sidebarLeft--md.section.container-fluid#sidebarLeft&attributes(attributes)
+		
+		+b.panel-block--md.border.border-primary
+			+e.head.bg-wrap
+				img.img-bg.object-fit-js(src="img/@2x/2019-09-06.png", alt="")
+				+e.head-title площа Перемоги, 3, 
+					br
+					| Київ, Украина, 
+					br
+					| секция или еще что-то
+			+e.body
+				block
+			+e.footer
+				img(src="img/@2x/banner-sm.jpg", alt="")
+			 
+	// end sidebarLeft
+
+mixin sidebarLeft2()
+	+sidebarBody()
+		.h5.fw-400.border-bottom.border-light.text-primary Універмаг Україна
+		.h5.fw-300.border-bottom.border-light.text-primary Торговый центр
+		+e.link-add(href="#") 
+			span Добавить фото 
+			+icon("icon_material-add-a-photo")
+			
+		+e.link-add(href="#") 
+			span Добавить отзыв 
+			+icon("icon_feather-star")
+			+icon("icon_feather-star")
+			+icon("icon_feather-star")
+			+icon("icon_feather-star")
+			+icon("icon_feather-star")
+		+e.link-add(href="#") 
+			span Добавить объект  
+			+icon("map_marker")
+		br
+		br
+		+e.link-add(href="#") 
+			span Показать все организации в здании 
+			+icon("map_marker")
+		.h6.text-primary.fw-300 площа Перемоги, 3, Київ, Украина, 01135 
+			br
+			| CFWR+GQ Киев, Kyiv city, Украина
+			br
+			a(href="http://ukraina.ua/") http://ukraina.ua/
+			br
+			a(href="tel:+380444961627") +380 44 496 1627
+		+b.star-block
+			+icon("icon_feather-star")(class="text-primary")
+			+icon("icon_feather-star")(class="text-primary")
+			+icon("icon_feather-star")(class="text-primary")
+			+icon("icon_feather-star")(class="text-primary-light")
+			+icon("icon_feather-star")
+		.h6.text-primary.fw-300 Сейчас открыто
+		+b.time-block
+			img(src="img/svg/clock.svg", alt="")
+			| 1000 - 2100
+			+icon('arrow-alt-circle-down') 
+	// end sidebarLeft
+
+mixin sidebarLeft3()
+	+sidebarBody()
+	 
+		.h6.text-primary.fw-300 Сейчас открыто
+		+b.time-block.active
+			img(src="img/svg/clock.svg", alt="")
+			| 1000 - 2100
+			+icon('arrow-alt-circle-down') 
+		.h6.text-primary.fw-300 #[span пн] 1000 - 2100 
+		.h6.text-primary.fw-300 #[span вт] 1000 - 2100
+		.h6.text-primary.fw-300 #[span ср] 1000 - 2100
+		.h6.text-primary.fw-300 #[span чт] 1000 - 2100
+		.h6.text-primary.fw-300 #[span пт] 1000 - 2100
+		.h6.text-primary.fw-300 #[span сб] 1000 - 2100
+		.h6.text-primary.fw-300 #[span вс] 1000 - 2100
+		.border-bottom.border-light.mb-3
+		.row
+			.col.h5.fw-400.text-primary Все отзывы
+			.col-auto.mb-3
+				a.text-body.tdn(href="#") добавить #[img(src="img/svg/add.svg", alt="") ]
+		+b.rew
+			- for (var x = 0; x < 3; x++)
+				+e.item
+					+e.title.mb-2.text-primary
+						+e.img-wrap
+							img.mr-2(src="img/svg/user-circle.svg", alt="")
+							| Джулия Кляйн
+					+b.star-block--sm.text-left 
+						+icon("icon_feather-star")(class="text-primary")
+						+icon("icon_feather-star")(class="text-primary")
+						+icon("icon_feather-star")(class="text-primary") 
+						+icon("icon_feather-star")(class="text-primary") 
+						+icon("icon_feather-star")(class="text-primary") 
+					p Люблю Украину! В моем детстве это был  универмаг. Сейчас ТРЦ. Он какой-то особенный.  Добавить бы еду какую-то. Пузатую хату  например. И туалеты сделать бесплатными.
+					.row
+						a.d-flex.align-items-center.col-auto.h6.text-primary.fw-300.tdn(href="#") нравится #[img.ml-2(src="img/svg/like-4.svg", alt="") ] 
+						a.d-flex.align-items-center.col-auto.h6.text-primary.fw-300.tdn(href="#") поделиться #[img.ml-2(src="img/svg/Share-4.svg", alt="") ] 
+
+	// end sidebarLeft
+
+mixin sidebarLeft4()
+	+sidebarBody()(class="sidebarLeft--addPhoto")
+		+e.link-add--title
+			span Добавить фото 
+			+icon("icon_material-add-a-photo")
+		+b.carusel--js.swiper-container
+			.swiper-wrapper
+				- for (var x = 1; x <= 8; x++)
+					+e.slide.swiper-slide
+						+e.img-wrap.bg-wrap(href=`img/@2x/${x}.jpg` data-fancybox="gal")
+							img.res-i.object-fit-js.img-bg(src=`img/@1x/${x}.jpg`, alt="")
+		.form-group
+			+b.FORM.dropzone(action='/file-upload'  enctype="multipart/form-data")
+				+e.prev-wrap перетащите сюда фотографию или #[span.text-primary нажмите] чтобы загрузить
+				.fallback
+					input(name='file', type='file', multiple='')
+		.form-group
+			textarea.form-control.border-dotted( placeholder="Добавьте описание")
+		+e.btn-add(type="submit") Добавить
+		.text-left.mt-a
+			a.tdn.text-body(href="#") вернуться к описанию
+	// end sidebarLeft
+
+mixin sidebarLeft5()
+	+sidebarBody()(class="sidebarLeft--addPhoto")
+		+e.link-add--title
+			span Добавить отзыв 
+			+b.star-block.mb-1
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+	 
+		.form-group
+			textarea.form-control.border-dotted( placeholder="Добавьте описание")
+		.form-group
+			+b.FORM.dropzone(action='/file-upload'  enctype="multipart/form-data")
+				+e.prev-wrap перетащите сюда фотографию или #[span.text-primary нажмите] чтобы загрузить
+				.fallback
+					input(name='file', type='file', multiple='')
+		+e.btn-add(type="submit") Добавить
+		.text-left.mt-a
+			a.tdn.text-body(href="#") вернуться к описанию
+	// end sidebarLeft
+

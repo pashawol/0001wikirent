@@ -1,0 +1,23 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sidebarLeft/_sidebarLeft.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'main'
+	title= title
+block pagecontent
+	#map
+	+mob-mnu()
+	+header()
+	+sidebarLeft
+	//- 	+topLine()
+	//- 	+top-nav()
+	//- +headerBlock()
+	//- +sForm()
+	//- +sContact()
+	+footer()
