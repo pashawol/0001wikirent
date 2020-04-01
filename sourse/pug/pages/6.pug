@@ -10,18 +10,7 @@ block variables
 block title
 	- let  title= '1'
 	title= title
-block pagecontent
-	#map
-	+mob-mnu()
-	+header()
-	//- +sidebarLeft
-
-	//- 	+topLine()
-	//- 	+top-nav()
-	//- +headerBlock()
-	//- +sForm()
-	//- +sContact()
-	//- .container-fluid
+block pagecontent 
 	+sidebarLeft
 		+form-wrap
 			+input("Имя пользователя")(class="form-control-lg")
@@ -29,6 +18,4 @@ block pagecontent
 			+input("Повторите пароль*",'password')(class="form-control-lg")
 			+input("@mail",'email')(class="form-control-lg")
 			button.btn.btn-primary.btn-lg.btn-block(type="submit") зарегистрироваться
-			button.btn.btn-primary.btn-lg.btn-block.btn-reset(type="button") отменить
-
-	+footer()
+			button.btn.btn-primary.btn-lg.btn-block.btn-reset(type="button") отменить 

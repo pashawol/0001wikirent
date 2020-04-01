@@ -232,11 +232,11 @@ function eventHandler() {
 			mapTypeId: 'roadmap',
 
 		});
-		var iconBase = 'img/svg/place.svg';
+		// var iconBase = 'img/svg/place.svg';
 		var icons = {
 
 			info: {
-				icon: iconBase
+				// icon: iconBase
 			}
 		};
 		var features = [
@@ -268,6 +268,11 @@ function eventHandler() {
 
 
 	// /карта
+	$(".accordion-item__toggle--js").click(function () {
+		$(this).next().slideToggle(function () {
+			$(this).parents(".accordion-item--js").toggleClass("active")
+		})
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

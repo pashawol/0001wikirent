@@ -201,11 +201,10 @@ function eventHandler() {
 			//- center: new google.maps.LatLng(53.98205856875258,88.80421049999992),
 			center: new google.maps.LatLng(centerMap),
 			mapTypeId: 'roadmap'
-		});
-		var iconBase = 'img/svg/place.svg';
+		}); // var iconBase = 'img/svg/place.svg';
+
 		var icons = {
-			info: {
-				icon: iconBase
+			info: {// icon: iconBase
 			}
 		};
 		var features = [{
@@ -233,6 +232,12 @@ function eventHandler() {
 	setTimeout(function () {
 		initMap();
 	}, 1000); // /карта
+
+	$(".accordion-item__toggle--js").click(function () {
+		$(this).next().slideToggle(function () {
+			$(this).parents(".accordion-item--js").toggleClass("active");
+		});
+	});
 }
 
 ;

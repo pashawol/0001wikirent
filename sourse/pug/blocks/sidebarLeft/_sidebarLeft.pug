@@ -27,6 +27,31 @@ mixin sidebarBody()
 			 
 	// end sidebarLeft
 
+ 
+mixin sidebarBodyLg()
+	// start sidebarLeft
+	+b.sidebarLeft--lg.section.container-fluid#sidebarLeft&attributes(attributes)
+		
+		+b.panel-block--lg.border.border-primary-light
+			.row-head.row.no-gutters.bg-primary-light.text-white
+				.col-6
+					+e.head.bg-wrap
+						img.img-bg.object-fit-js(src="img/@2x/2019-09-06.png", alt="")
+						+e.head-title площа Перемоги, 3, 
+							br
+							| Київ, Украина, 
+							br
+							| секция или еще что-то
+				.col-6
+					+b.head-banner(href="#")
+						+e.img-wrap
+							img(src="img/@1x/img-without.jpg", alt="")
+						+e.text  Самая эффективная реклама вашего бизнеса
+			+e.body
+				block
+			 
+	// end sidebarLeft
+
 mixin sidebarLeft2()
 	+sidebarBody()
 		.h5.fw-400.border-bottom.border-light.text-primary Універмаг Україна
@@ -134,7 +159,7 @@ mixin sidebarLeft4()
 	// end sidebarLeft
 
 mixin sidebarLeft5()
-	+sidebarBody()(class="sidebarLeft--addPhoto")
+	+sidebarBody()(class="")
 		+e.link-add--title
 			span Добавить отзыв 
 			+b.star-block.mb-1
@@ -154,5 +179,102 @@ mixin sidebarLeft5()
 		+e.btn-add(type="submit") Добавить
 		.text-left.mt-a
 			a.tdn.text-body(href="#") вернуться к описанию
+	// end sidebarLeft
+
+mixin sidebarLeft6-1()
+	+sidebarBodyLg()(class="")
+		+e.link-add--title
+			span Добавить объект
+			+icon("map_marker")
+		.row
+			.col-lg-6
+				+input('Название организации (обязательно)')(class="border-dotted")
+				+input('Сфера деятельности (обязательно)')(class="border-dotted")
+				.border-dotted.border-dotted--block
+					.fw-300.mb-2 Тип объекта (обязательно)
+					+in-c('radio','Коммерческая организация', 'type')(checked)
+					+in-c('radio','Жилой дом', 'type')
+				+input('Контактный номер')(class="border-dotted")
+				+input('Сайт или страница в соц.сетях')(class="border-dotted")
+				+input('Адрес электронной почты')(class="border-dotted") 
+				.form-group
+					+b.FORM.dropzone(action='/file-upload'  enctype="multipart/form-data")
+						+e.prev-wrap перетащите сюда фотографию или #[span.text-primary нажмите] чтобы загрузить
+						.fallback
+							input(name='file', type='file', multiple='')
+			.col-lg-6.d-flex.flex-column
+				+b.accordion-item--js.border-dotted.border-dotted--block
+					+e.toggle--js
+						| Режим работы
+					+e.dropdown--js
+						table
+							mixin tr(t)
+								tr
+									td= t
+									td 10-00
+									td 21-00
+									td
+										+b.LABEL.time-select
+											+e.INPUT.input(type="checkbox")
+											+e.SPAN.text--work раб
+											+e.SPAN.text--holiday вых
+							+tr("ПН")
+							+tr("ВТ")
+							+tr("СР")
+							+tr("ЧТ")
+							+tr("ПТ")
+							+tr("СБ")
+							+tr("ВС")
+
+				.form-group
+					textarea.form-control.border-dotted( placeholder="комментарий")
+				+e.btn-add(type="submit") Добавить
+		.text-right.mt-a.mb-1
+			a.tdn(href="#") вернуться к описанию
+	// end sidebarLeft
+
+mixin sidebarLeft8()
+	+sidebarBodyLg()(class="")
+		block
+		.row.pb-1
+			.col-lg-6
+				+e.link-add--title
+					span Добавить объект
+					+icon("map_marker")
+			.col
+				+b.FORM.search-inner
+						+e.INPUT.input(type="text" placeholder="начните вводить адрес")
+						+e.BUTTON.btn(type="submit")
+							img(src="img/svg/search-bl.svg" alt="")
+		
+		.row
+			-
+				var list = [
+					"Golden Ostap",
+					"Ірис",
+					"Золотий Вік",
+					"Київський Ювелірний Завод",
+					"Онікс",
+					"СЮФ",
+					"SOVA",
+					"Golden Ostap",
+					"Pandora", 
+					"Golden Ostap",
+					"Ірис",
+					"Золотий Вік",
+					"Київський Ювелірний Завод",
+					"Онікс",
+					"СЮФ",
+					"SOVA",
+					"Golden Ostap",
+					"Pandora", 
+				] 
+			each item in list
+				.col-lg-6
+					+b.accordion-item.border-dotted.border-dotted--block
+						+e.toggle= item
+		
+		.text-right.mt-a.mb-1
+			a.tdn(href="#") вернуться к описанию
 	// end sidebarLeft
 

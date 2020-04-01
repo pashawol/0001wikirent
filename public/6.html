@@ -28,9 +28,9 @@
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<div id="map"></div>
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+			<div class="toggle-menu-mobile toggle-menu-mobile--js d-md-none"><span></span>
 			</div>
-			<div class="menu-mobile menu-mobile--js d-lg-none">
+			<div class="menu-mobile menu-mobile--js d-md-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
 				<div class="menu-mobile__inner">
@@ -59,9 +59,42 @@
 			</div>
 			<!--  мобильное меню-->
 			<!-- start header-->
-			<section class="header">
+			<div class="header">
 				<div class="container-fluid">
 					<div class="row">
+						<div class="col-auto order-md-last">
+							<div class="dropdown dropdown--js">
+								<div class="dropdown__toggle">
+									<svg class="icon icon-menu ">
+										<use xlink:href="img/svg/sprite.svg#menu"></use>
+									</svg>
+								</div>
+								<div class="dropdown__block dropdown__block--menu">
+									<div class="menu-map"><a class="menu-map__btn active" href="#">Yandex </a><a class="menu-map__btn" href="#">Google</a><a class="menu-map__btn" href="#">OpenStreet</a>
+									</div>
+									<p class="text-center text-primary">Выберите язык</p>
+									<div class="menu-lang"><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Russia.svg" alt=""/></span>RU</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Ukraine-98.svg" alt=""/></span> UA</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_the_United_Kingdom.svg" alt=""/></span>EN</a>
+									</div>
+									<div class="dropdown__divider">
+									</div>
+									<div class="nav"><a class="nav__link" href="#"><span class="nav__icon-wrap">
+										<svg class="icon icon-speak ">
+											<use xlink:href="img/svg/sprite.svg#speak"></use>
+										</svg></span>Сообщение</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
+										<svg class="icon icon-icon_feather-star ">
+											<use xlink:href="img/svg/sprite.svg#icon_feather-star"></use>
+										</svg></span>Избранное</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
+										<svg class="icon icon-map_marker ">
+											<use xlink:href="img/svg/sprite.svg#map_marker"></use>
+										</svg></span>Добавить объект</a>
+									</div>
+									<div class="dropdown__divider">
+									</div>
+									<div class="nav text-center"><a class="nav__link" href="#">Реклама в wikirent.info</a><a class="nav__link" href="#">Сообщить об ошибке</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="col-auto">
 							<form class="search-block"><span class="search-block__title"> wikirent.info</span><input class="search-block__input" type="text" placeholder="начните вводить адрес"/>
 								<button class="search-block__btn" type="submit"><img src="img/svg/search.svg" alt=""/>
@@ -102,42 +135,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-auto">
-							<div class="dropdown dropdown--js">
-								<div class="dropdown__toggle">
-									<svg class="icon icon-menu ">
-										<use xlink:href="img/svg/sprite.svg#menu"></use>
-									</svg>
-								</div>
-								<div class="dropdown__block dropdown__block--menu">
-									<div class="menu-map"><a class="menu-map__btn active" href="#">Yandex </a><a class="menu-map__btn" href="#">Google</a><a class="menu-map__btn" href="#">OpenStreet</a>
-									</div>
-									<p class="text-center text-primary">Выберите язык</p>
-									<div class="menu-lang"><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Russia.svg" alt=""/></span>RU</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Ukraine-98.svg" alt=""/></span> UA</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_the_United_Kingdom.svg" alt=""/></span>EN</a>
-									</div>
-									<div class="dropdown__divider">
-									</div>
-									<div class="nav"><a class="nav__link" href="#"><span class="nav__icon-wrap">
-										<svg class="icon icon-speak ">
-											<use xlink:href="img/svg/sprite.svg#speak"></use>
-										</svg></span>Сообщение</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
-										<svg class="icon icon-icon_feather-star ">
-											<use xlink:href="img/svg/sprite.svg#icon_feather-star"></use>
-										</svg></span>Избранное</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
-										<svg class="icon icon-map_marker ">
-											<use xlink:href="img/svg/sprite.svg#map_marker"></use>
-										</svg></span>Добавить объект</a>
-									</div>
-									<div class="dropdown__divider">
-									</div>
-									<div class="nav text-center"><a class="nav__link" href="#">Реклама в wikirent.info</a><a class="nav__link" href="#">Сообщить об ошибке</a>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<!-- end header-->
 			<!-- start sidebarLeft-->
 			<div class="sidebarLeft sidebarLeft--main section container-fluid" id="sidebarLeft">
@@ -163,7 +163,7 @@
 							</div>
 							<!-- +e.input-wrap-->
 							<button class="btn btn-primary btn-lg btn-block" type="submit">зарегистрироваться</button>
-							<button class="btn btn-primary btn-lg btn-block btn-reset" type="button">отменить</button>
+							<button class="btn btn-primary btn-lg btn-block btn-reset" type="button">отменить </button>
 						</form>
 					</div>
 				</div>

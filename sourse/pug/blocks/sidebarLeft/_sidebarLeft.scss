@@ -2,6 +2,7 @@
 .sidebarLeft {
 	background-color: $light;
 	max-height: 100%;
+	// max-height: 100%;
 
 	&--md {
 
@@ -11,6 +12,30 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 
+	}
+
+	&--lg {
+		max-width: rem(740);
+		position: relative;
+		// overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+
+		.panel-block {
+			max-height: 100%;
+			display: flex;
+			flex-direction: column;
+
+			padding: 0;
+			border: none;
+
+			&::before {
+				display: none;
+				border: none;
+			}
+		}
 	}
 
 	&--main {
@@ -26,7 +51,7 @@
 
 		.form-wrap {
 			@include a-cent(y);
-			width: 398px;
+			width: rem(398px);
 
 			box-shadow: 0 0 15px rgba(81, 158, 235, 0.3);
 			border-radius: $border-radius;
@@ -98,180 +123,3 @@
 }
 
 // end.sidebarLeft
-
-.panel-block {
-	border-radius: $border-radius;
-	// border: 1px solid #ffffff;
-	box-shadow: 2px 2px 10px rgba($color: $body-color, $alpha: .13);
-	// background-color: $light;
-	background-color: #ffffff;
-	flex-grow: 1;
-	position: relative;
-	z-index: 2;
-	max-height: 100%;
-
-
-	&--lg::before {
-		content: '';
-		z-index: -1;
-		width: calc(100% - 2px);
-		height: calc(100% - 2px);
-		@include a-cent;
-		border-radius: $border-radius;
-		border: 5px solid $light;
-	}
-
-	&--md {
-		display: flex;
-		flex-direction: column;
-
-	}
-
-	&__head {
-		position: relative;
-		overflow: hidden;
-		border-radius: $border-radius $border-radius 0 0;
-		padding: rem(14);
-		@extend .h4;
-		color: #ffffff;
-		font-weight: 700;
-		margin-bottom: 0;
-		line-height: 1.33;
-		min-height: rem(97);
-	}
-
-	&__body {
-		padding: rem(20) rem(13);
-		overflow-y: auto;
-		overflow-x: hidden;
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-	}
-
-	&__link-add {
-		@extend .h6;
-		@extend .fw-300;
-		color: $primary;
-		border-bottom: 1px solid $light;
-		display: block;
-		@extend .tdn;
-		margin-bottom: 0.5rem;
-
-
-		span {
-			margin-right: rem(5);
-			min-width: rem(130);
-			display: inline-block;
-		}
-
-		.icon {
-			font-size: rem(20);
-		}
-
-		.icon-icon_feather-star {
-			stroke: $primary;
-			stroke-width: 2px;
-			color: transparent;
-		}
-
-		&--title {
-			display: flex;
-			align-items: center;
-			border: none;
-		}
-	}
-
-	position: relative;
-	padding-bottom: rem(70);
-
-	&__footer {
-		padding-bottom: rem(10);
-		margin-top: auto;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		background-color: #ffffff;
-		width: 100%;
-		left: 0;
-		border-radius: 0 0 $border-radius $border-radius;
-		padding: rem(10);
-	}
-}
-
-.star-block {
-	text-align: center;
-	margin-bottom: rem(25);
-
-	.icon-icon_feather-star {
-		font-size: rem(20);
-		stroke: $primary;
-		stroke-width: 2px;
-		color: transparent;
-	}
-
-	&--sm {
-		margin-bottom: rem(10);
-
-		.icon {
-			font-size: rem(12);
-		}
-	}
-}
-
-.time-block {
-	@extend .h6;
-	font-weight: 300;
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-
-	&.active {
-		.icon-arrow-alt-circle-down {
-			transform: rotateX(180deg);
-		}
-	}
-
-	.icon {
-
-		&-clock {
-			color: $primary;
-			font-size: rem(22);
-		}
-
-		&-arrow-alt-circle-down {
-			color: $body-color;
-			font-size: rem(21);
-			margin-left: rem(5);
-			@include mt;
-		}
-	}
-
-	img {
-		margin-right: rem(10);
-	}
-
-
-}
-
-.sidebarLeft--addPhoto {
-	.border-dotted {
-		min-height: 100px;
-	}
-}
-
-.panel-block__btn-add {
-	margin-left: auto;
-	margin-right: auto;
-	@extend .btn;
-	@extend .btn-primary;
-	@extend .btn-block;
-	margin-left: auto;
-	margin-right: auto;
-	width: rem(158);
-	margin-bottom: rem(20);
-}
-
-.mt-a {
-	margin-top: auto;
-}

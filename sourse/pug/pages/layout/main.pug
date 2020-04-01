@@ -43,8 +43,12 @@ html(lang="ru")
 	body(class= mainPage)
 		+ie11()
 		.main-wrapper
+			#map
+			+mob-mnu()
+			+header()
 			block pagecontent
 				h3 content
+			+footer()
 		+modal()
 		+allcjs()
 		

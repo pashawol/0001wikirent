@@ -1,0 +1,68 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sidebarLeft/_sidebarLeft.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= '9'
+	title= title
+block pagecontent 
+	+sidebarLeft8
+		.modal-comp.border-dotted
+			.modal-comp-title.border-bottom.border-light Golden Ostap
+				+b.modal-close
+			+e.link-add(href="#") 
+				span Добавить фото 
+				+icon("icon_material-add-a-photo")
+				
+			+e.link-add(href="#") 
+				span Добавить отзыв 
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+				+icon("icon_feather-star")
+			+e.link-add(href="#") 
+				span Добавить объект  
+				+icon("map_marker")
+			br
+			br
+			+e.link-add(href="#") 
+				span Показать все организации в здании 
+				+icon("map_marker")
+			.h6.text-primary.fw-300 площа Перемоги, 3, Київ, Украина, 01135 
+				br
+				| CFWR+GQ Киев, Kyiv city, Украина
+				br
+				a(href="http://ukraina.ua/") http://ukraina.ua/
+				br
+				a(href="tel:+380444961627") +380 44 496 1627
+			+b.star-block
+				+icon("icon_feather-star")(class="text-primary")
+				+icon("icon_feather-star")(class="text-primary")
+				+icon("icon_feather-star")(class="text-primary")
+				+icon("icon_feather-star")(class="text-primary-light")
+				+icon("icon_feather-star")
+			.h6.text-primary.fw-300 Сейчас открыто
+			+b.time-block
+				img(src="img/svg/clock.svg", alt="")
+				| 1000 - 2100
+				+icon('arrow-alt-circle-down') 
+			+b.rew
+			- for (var x = 0; x < 1; x++)
+				+e.item
+					+e.title.mb-2.text-primary
+						+e.img-wrap
+							img.mr-2(src="img/svg/user-circle.svg", alt="")
+							| Джулия Кляйн
+					+b.star-block--sm.text-left 
+						+icon("icon_feather-star")(class="text-primary")
+						+icon("icon_feather-star")(class="text-primary")
+						+icon("icon_feather-star")(class="text-primary") 
+						+icon("icon_feather-star")(class="text-primary") 
+						+icon("icon_feather-star")(class="text-primary") 
+					p Люблю Украину! В моем детстве это был  универмаг. Сейчас ТРЦ. Он какой-то особенный.  Добавить бы еду какую-то. Пузатую хату  например. И туалеты сделать бесплатными.  
