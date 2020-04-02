@@ -12,7 +12,8 @@ block title
 	title= title
 block pagecontent 
 	+sidebarLeft
-		+form-wrap
+	.modal-reg
+		+form-wrap()
 			+input("Имя пользователя")(class="form-control-lg")
 			+input("Пароль*",'password')(class="form-control-lg")
 			+input("Повторите пароль*",'password')(class="form-control-lg")

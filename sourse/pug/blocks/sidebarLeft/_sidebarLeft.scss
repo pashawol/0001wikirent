@@ -1,6 +1,10 @@
 // start .sidebarLeft
 .sidebarLeft {
-	background-color: $light;
+	@include media-breakpoint-up(lg) {
+
+		background-color: $light;
+	}
+
 	max-height: 100%;
 	// max-height: 100%;
 
@@ -15,7 +19,12 @@
 	}
 
 	&--lg {
-		max-width: rem(740);
+		@include media-breakpoint-up(lg) {
+
+
+			max-width: rem(740);
+		}
+
 		position: relative;
 		// overflow: hidden;
 		overflow-x: hidden;
@@ -47,35 +56,31 @@
 			max-height: 100%;
 		}
 
-		max-width: rem(1170 - 376);
+		@include media-breakpoint-up(lg) {
 
-		.form-wrap {
-			@include a-cent(y);
-			width: rem(398px);
 
-			box-shadow: 0 0 15px rgba(81, 158, 235, 0.3);
-			border-radius: $border-radius;
-			background-color: $light;
-			padding: rem(30) rem(40) rem(80);
-			right: rem(50);
-
-			.form-control-lg {
-				box-shadow: 0 3px 6px rgba(81, 158, 235, 0.3);
-			}
+			max-width: rem(1170 - 376);
 		}
 
-		.btn-reset {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			padding: 2px;
-			border-radius: 0 0 $border-radius $border-radius;
+		@include media-breakpoint-up(lg) {
+			margin-top: 0;
 		}
+
+		margin-top: 50vh;
+
+
 	}
 
 	flex-grow: 1;
-	padding-top: rem(60);
-	padding-bottom: rem(20);
+
+	@include media-breakpoint-up(lg) {
+
+		padding-top: rem(60);
+		padding-bottom: rem(20);
+	}
+
+	padding-top: rem(40);
+	padding-bottom: rem(1);
 	display: flex;
 	flex-direction: column;
 	margin: 0;

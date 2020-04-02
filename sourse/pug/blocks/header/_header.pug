@@ -3,7 +3,7 @@ mixin header()
 	+b.header&attributes(attributes)
 		.container-fluid
 			.row
-				.col-auto.order-md-last
+				.col-auto.order-md-last.d-none.d-lg-block
 					+b.dropdown--js
 						+e.toggle
 							+icon('menu')
@@ -46,19 +46,23 @@ mixin header()
 							+b.nav.text-center
 								+e.link(href="#") Реклама в wikirent.info
 								+e.link(href="#") Сообщить об ошибке
-				.col-auto
+				.col-lg-auto
 					+b.FORM.search-block
+						+b.toggle-menu-mobile--js.d-lg-none
+							span 
 						+e.SPAN.title  wikirent.info
-						//- +e.input-wrap
-						+e.INPUT.input(type="text" placeholder="начните вводить адрес")
-						+e.BUTTON.btn(type="submit")
+						+e.input-wrap
+							+e.INPUT.input(type="text" placeholder="начните вводить адрес")
+							+e.BUTTON.btn(type="submit")
+								img(src="img/svg/search.svg" alt="")
+							+e.dropdown
+								+e.dropdown-title недавние
+								+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
+								+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
+								+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
+						+e.BUTTON.btn--show-js(type="button").d-lg-none
 							img(src="img/svg/search.svg" alt="")
-						+e.dropdown
-							+e.dropdown-title недавние
-							+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
-							+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
-							+e.dropdown-item(href="#") Lorem ipsum dolor sit amet.
-				.col
+				.col.d-none.d-lg-block
 					+b.dropdown--js
 						+e.toggle
 							+icon('user')

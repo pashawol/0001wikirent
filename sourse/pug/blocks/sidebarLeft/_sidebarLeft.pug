@@ -34,7 +34,7 @@ mixin sidebarBodyLg()
 		
 		+b.panel-block--lg.border.border-primary-light
 			.row-head.row.no-gutters.bg-primary-light.text-white
-				.col-6
+				.col-lg-6
 					+e.head.bg-wrap
 						img.img-bg.object-fit-js(src="img/@2x/2019-09-06.png", alt="")
 						+e.head-title площа Перемоги, 3, 
@@ -42,14 +42,15 @@ mixin sidebarBodyLg()
 							| Київ, Украина, 
 							br
 							| секция или еще что-то
-				.col-6
+				.col-6.d-none.d-lg-block
 					+b.head-banner(href="#")
 						+e.img-wrap
 							img(src="img/@1x/img-without.jpg", alt="")
 						+e.text  Самая эффективная реклама вашего бизнеса
 			+e.body
 				block
-			 
+			+e.footer.d-lg-none
+				img(src="img/@2x/banner-sm.jpg", alt="") 
 	// end sidebarLeft
 
 mixin sidebarLeft2()

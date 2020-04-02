@@ -180,6 +180,16 @@ function eventHandler() {
 
 	$(".dropdown__toggle").click(function () {
 		$(this).toggleClass('active').next().toggleClass("active");
+	});
+	$(".search-block__btn--show-js").click(function () {
+		$(".search-block__input-wrap").toggleClass("active");
+	});
+	$(document).mouseup(function (e) {
+		var container = $(".search-block__input-wrap.active");
+
+		if (container.has(e.target).length === 0) {
+			container.removeClass("active");
+		}
 	}); // карта
 
 	var scriptMap = document.createElement('script');

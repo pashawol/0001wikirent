@@ -26,43 +26,46 @@
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+		<div class="menu-mobile menu-mobile--js d-lg-none">
+			<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+			</div>
+			<div class="menu-mobile__inner">
+				<div class="dropdown">
+					<div class="dropdown__block dropdown__block--menu active">
+						<div class="menu-map"><a class="menu-map__btn active" href="#">Yandex </a><a class="menu-map__btn" href="#">Google</a><a class="menu-map__btn" href="#">OpenStreet</a>
+						</div>
+						<p class="text-center text-primary">Выберите язык</p>
+						<div class="menu-lang"><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Russia.svg" alt=""/></span>RU</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_Ukraine-98.svg" alt=""/></span> UA</a><a class="menu-lang__btn" href="#"><span class="menu-lang__img-wrap"><img src="img/svg/Flag_of_the_United_Kingdom.svg" alt=""/></span>EN</a>
+						</div>
+						<div class="dropdown__divider">
+						</div>
+						<div class="nav"><a class="nav__link" href="#"><span class="nav__icon-wrap">
+							<svg class="icon icon-speak ">
+								<use xlink:href="img/svg/sprite.svg#speak"></use>
+							</svg></span>Сообщение</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
+							<svg class="icon icon-icon_feather-star ">
+								<use xlink:href="img/svg/sprite.svg#icon_feather-star"></use>
+							</svg></span>Избранное</a><a class="nav__link" href="#"><span class="nav__icon-wrap">
+							<svg class="icon icon-map_marker ">
+								<use xlink:href="img/svg/sprite.svg#map_marker"></use>
+							</svg></span>Добавить объект</a>
+						</div>
+						<div class="dropdown__divider">
+						</div>
+						<div class="nav text-center"><a class="nav__link" href="#">Реклама в wikirent.info</a><a class="nav__link" href="#">Сообщить об ошибке</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  мобильное меню-->
 		<div class="main-wrapper">
 			<div id="map"></div>
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-md-none"><span></span>
-			</div>
-			<div class="menu-mobile menu-mobile--js d-md-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
-				</div>
-			</div>
-			<!--  мобильное меню-->
 			<!-- start header-->
 			<div class="header">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-auto order-md-last">
+						<div class="col-auto order-md-last d-none d-lg-block">
 							<div class="dropdown dropdown--js">
 								<div class="dropdown__toggle">
 									<svg class="icon icon-menu ">
@@ -95,17 +98,23 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-auto">
-							<form class="search-block"><span class="search-block__title"> wikirent.info</span><input class="search-block__input" type="text" placeholder="начните вводить адрес"/>
-								<button class="search-block__btn" type="submit"><img src="img/svg/search.svg" alt=""/>
-								</button>
-								<div class="search-block__dropdown">
-									<div class="search-block__dropdown-title">недавние
-									</div><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a>
+						<div class="col-lg-auto">
+							<form class="search-block">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span> </span>
+								</div><span class="search-block__title"> wikirent.info</span>
+								<div class="search-block__input-wrap"><input class="search-block__input" type="text" placeholder="начните вводить адрес"/>
+									<button class="search-block__btn" type="submit"><img src="img/svg/search.svg" alt=""/>
+									</button>
+									<div class="search-block__dropdown">
+										<div class="search-block__dropdown-title">недавние
+										</div><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a><a class="search-block__dropdown-item" href="#">Lorem ipsum dolor sit amet.</a>
+									</div>
 								</div>
+								<button class="search-block__btn search-block__btn--show-js d-lg-none" type="button"><img src="img/svg/search.svg" alt=""/>
+								</button>
 							</form>
 						</div>
-						<div class="col">
+						<div class="col d-none d-lg-block">
 							<div class="dropdown dropdown--js">
 								<div class="dropdown__toggle">
 									<svg class="icon icon-user ">
@@ -142,33 +151,35 @@
 			<!-- start sidebarLeft-->
 			<div class="sidebarLeft sidebarLeft--main section container-fluid" id="sidebarLeft">
 				<div class="panel-block panel-block--lg"><img src="img/@2x/img.jpg" alt=""/>
-					<div class="form-wrap">
-						<form>
-							<input type="hidden" name="example-input-field"/>
-							<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
-							<input class="utm_source" type="hidden" name="utm_source"/>
-							<input class="utm_term" type="hidden" name="utm_term"/>
-							<input class="utm_medium" type="hidden" name="utm_medium"/>
-							<input class="utm_campaign" type="hidden" name="utm_campaign"/>
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="text" placeholder="Имя пользователя" name="text"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="password" placeholder="Пароль*" name="password"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="password" placeholder="Повторите пароль*" name="password"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="email" placeholder="@mail" name="email"/>
-							</div>
-							<!-- +e.input-wrap-->
-							<button class="btn btn-primary btn-lg btn-block" type="submit">зарегистрироваться</button>
-							<button class="btn btn-primary btn-lg btn-block btn-reset" type="button">отменить </button>
-						</form>
-					</div>
 				</div>
 			</div>
 			<!-- end sidebarLeft-->
+			<div class="modal-reg">
+				<div class="form-wrap">
+					<form>
+						<input type="hidden" name="example-input-field"/>
+						<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+						<input class="utm_source" type="hidden" name="utm_source"/>
+						<input class="utm_term" type="hidden" name="utm_term"/>
+						<input class="utm_medium" type="hidden" name="utm_medium"/>
+						<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="text" placeholder="Имя пользователя" name="text"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="password" placeholder="Пароль*" name="password"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="password" placeholder="Повторите пароль*" name="password"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control form-control-lg" type="email" placeholder="@mail" name="email"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<button class="btn btn-primary btn-lg btn-block" type="submit">зарегистрироваться</button>
+						<button class="btn btn-primary btn-lg btn-block btn-reset" type="button">отменить </button>
+					</form>
+				</div>
+			</div>
 			<footer class="footer block-with-lazy">
 				<div class="container-fluid">
 					<div class="row">
