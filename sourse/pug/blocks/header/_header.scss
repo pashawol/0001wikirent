@@ -400,3 +400,15 @@
 	}
 
 }
+
+
+.overSearchBlock {
+	display: flex;
+	flex-grow: 1;
+
+	>div {
+
+		display: flex;
+		flex-grow: 1;
+	}
+}
