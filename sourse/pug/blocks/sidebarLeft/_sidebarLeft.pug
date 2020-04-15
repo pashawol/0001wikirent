@@ -3,7 +3,9 @@ mixin sidebarLeft()
 	+b.sidebarLeft--main.section.container-fluid#sidebarLeft&attributes(attributes)
 		
 		+b.panel-block--lg
-			img(src="img/@2x/img.jpg", alt="")
+			+b.promoBanner(href="#")
+				+e.text  Самая эффективная реклама вашего бизнеса
+				img(src="img/@2x/img.jpg", alt="")
 			block
 
 	// end sidebarLeft
@@ -22,8 +24,10 @@ mixin sidebarBody()
 					| секция или еще что-то
 			+e.body
 				block
-			+e.footer
-				img(src="img/@2x/banner-sm.jpg", alt="")
+			+e.footer(herf="#")
+				+e.img-wrap
+					img(src="img/@1x/img-without.jpg", alt="")
+				+e.text  Самая эффективная реклама вашего бизнеса
 			 
 	// end sidebarLeft
 
